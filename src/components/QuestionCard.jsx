@@ -1,6 +1,11 @@
 import './../styles/QuestionCard.css'
 
-function QuestionCard() {
+const QuestionCard = (questionText, option1, option2, option3, option4, answer) => {
+
+
+
+
+
     return (
         <div className="question-card">
             <div className="card">
@@ -9,13 +14,14 @@ function QuestionCard() {
                         Question
                         <span id="question-number"> 1</span><span id="question-sum">/4</span>
                     </h1>
-                    <p className="question-text">what is the capital city of Tunisia ?</p>
+                    <p className="question-text">{questionText} ?</p>
                 </div>
                 <div className="card-right">
-                    <div className="option">Option</div>
-                    <div className="option">Option</div>
-                    <div className="option">Option</div>
-                    <div className="option">Option</div>
+                    <div className="option">{option1}</div>
+                    <div className="option">{option2}</div>
+                    <div className="option">{option3}</div>
+                    <div className="option">{option4}</div>
+                    <div className="option">{answer}</div>
                 </div>
             </div>
         </div>

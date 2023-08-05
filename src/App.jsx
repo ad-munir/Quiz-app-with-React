@@ -14,10 +14,30 @@ function App() {
           count is {count}
         </button>
       </div>
-      <QuestionCard/>
-      <QuestionCard/>
-      <QuestionCard/>
-      <QuestionCard/>
+      <QuestionCard
+        questionText="What is the capital of France?"
+        option1="Paris"
+        option2="Berlin"
+        option3="London"
+        option4="Madrid"
+        answer="Paris"
+      />
+      <QuestionCard
+        questionText="What is the capital of France?"
+        option1="Paris"
+        option2="Berlin"
+        option3="London"
+        option4="Madrid"
+        answer="Paris"
+      />
+      <QuestionCard
+        questionText="What is the capital of France?"
+        option1="Paris"
+        option2="Berlin"
+        option3="London"
+        option4="Madrid"
+        answer="Paris"
+      />
     </>
   )
 }
