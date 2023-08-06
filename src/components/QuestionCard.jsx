@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import './../styles/QuestionCard.css'
 
-const QuestionCard = (questionText, option1, option2, option3, option4, answer) => {
+const QuestionCard = ({questionText, option1, option2, option3, option4, answer}) => {
 
 
 
@@ -21,8 +22,9 @@ const QuestionCard = (questionText, option1, option2, option3, option4, answer) 
                     <div className="option">{option2}</div>
                     <div className="option">{option3}</div>
                     <div className="option">{option4}</div>
-                    <div className="option">{answer}</div>
                 </div>
+                <div className="option">{answer}</div>
+
             </div>
         </div>
     )
