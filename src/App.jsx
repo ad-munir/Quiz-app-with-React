@@ -1,6 +1,6 @@
 import Navbar from './components/Navbar/Navbar'
 import {jsQuizz} from './constants'
-import Quiz from './components/Quiz'
+import Quiz from './components/Quiz/Quiz'
 
 function App() {
 

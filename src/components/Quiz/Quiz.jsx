@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import './../styles/QuestionCard.css'
+import './../../styles/QuestionCard.css'
 import { useState } from "react";
-import { resultIntialState } from "../constants";
+import { resultIntialState } from "../../constants";
 
 const Quiz = ({ questions }) => {
 
