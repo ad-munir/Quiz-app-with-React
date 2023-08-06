@@ -26,8 +26,31 @@ body {
     box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(2, 4fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-gap: 10px;
+}
+
+.card-left {
+    grid-column: 1 / span 1;
+    /* Span 1 column */
+    grid-row: 1 / span 2;
+    /* Span 2 rows */
+}
+
+.card-right {
+    grid-column: 2 / span 1;
+    /* Span 1 column */
+    grid-row: 1 / span 2;
+    /* Span 2 rows */
+}
+
+/* Styling for the card-footer section */
+.card-footer {
+    grid-column: 1 / span 2;
+    /* Span 2 columns */
+    grid-row: 3 / span 1;
+    /* Span 1 row */
 }
 
 #question {
@@ -40,6 +63,7 @@ body {
     font-weight: 300;
     font-size: 1.2em;
 }
+
 #question-sum {
     font-weight: 300;
     font-size: .7em;
@@ -63,6 +87,87 @@ body {
     cursor: pointer;
 }
 
+.selected-option {
+    background-color: #7cc6fe;
+}
+
 .option:hover {
     background-color: #7cc6fe;
 }
+
+.card-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-footer button {
+    background: linear-gradient(0deg, #9cc1de 0.03%, #a9b2d4);
+    border-radius: 9px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #252d4a;
+    padding: 10px 42px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid 2px linear-gradient(0deg, #9cc1de 0.03%, #a9b2d4);
+    height: 2.5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.card-footer button:disabled {
+    background: #252d4a;
+    color: gray;
+    border: solid 1px rgba(255, 255, 255, 0.553);
+}
+
+.result-board {
+    text-align: center;
+    background-color: aliceblue;
+    width: 50rem;
+    padding: 20px;
+    border-radius: 15px;
+    height: 20rem;
+}
+
+.result-board h1 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.result-board h3 {
+    font-size: 1.7em;
+    letter-spacing: 1.4px;
+    font-weight: 400;
+}
+
+
+.result-board h3 span {
+    color: #2f8f8c;
+}
+
+
+.result-board button {
+    background: linear-gradient(0deg, #9cc1de 0.03%, #a9b2d4);
+    border-radius: 9px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #252d4a;
+    padding: 10px 42px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border: solid 1px linear-gradient(0deg, #9cc1de 0.03%, #a9b2d4);
+    margin-top: 25px;
+}
+
+.result-board button:hover {
+    background: linear-gradient(0deg, #a9b2d4 0.03%, #9cc1de);
+    color: azure;
+    border: solid 2px;
+}
+

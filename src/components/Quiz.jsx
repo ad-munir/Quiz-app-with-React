@@ -51,6 +51,10 @@ const Quiz = ({ questions }) => {
         )
     }
 
+    const onclickTryAgain = ()=> {
+        setResult(resultIntialState);
+        setShowResult(false);
+    }
     return (
         <div className="question-card">
 
@@ -69,9 +73,9 @@ const Quiz = ({ questions }) => {
 
                         {choices.map((choice, index) => (
                             <li
-                                className="option"
                                 key={choice}
                                 onClick={() => onClickAnswer(choice, index)}
+                                className={choiceIndex === index ? "selected-option option" : "option"}
                             >
                                 {choice}
                             </li>
@@ -79,23 +83,26 @@ const Quiz = ({ questions }) => {
 
                     </ul>
 
-                    <div className="footer">
+                    <div className="card-footer">
                         <button
                             onClick={onClickNext}
                             disabled={choiceIndex === null}
                         >
                             {currentQuestion === questions.length - 1 ? "Finish" : "Next"}
                         </button>
-
                     </div>
                 </div>
 
                 :
 
-                <div>
-                    <h3>score: {result.score}</h3>
-                    <h3>correct: {result.correctAnswers}</h3>
-                    <h3>wrong: {result.wrongAnswers}</h3>
+                <div className='result-board'>
+                    <h1>Result</h1>
+                    <h3>Total Questions: <span>{questions.length}</span></h3>
+                    <h3>Score: <span>{result.score}</span></h3>
+                    <h3>Correct Answers: <span>{result.correctAnswers}</span></h3>
+                    <h3>Wrong Answers: <span>{result.wrongAnswers}</span></h3>
+
+                    <button onClick={() =>onclickTryAgain()}>Try again</button>
                 </div>}
         </div>
     )
