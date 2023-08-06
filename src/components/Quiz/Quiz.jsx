@@ -12,14 +12,10 @@ const Quiz = ({ questions }) => {
     const [result, setResult] = useState(resultIntialState);
     const [showResult, setShowResult] = useState(false);
 
-
-    //let correctAnswers =0;
-
     const onClickAnswer = (choice, index) => {
         setChoiceIndex(index);
         if (choice === correctAnswer) {
             setChoice(true)
-            //correctAnswers = correctAnswers+1;
         }
         else {
             setChoice(false)
