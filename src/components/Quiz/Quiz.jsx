@@ -1,23 +1,37 @@
 /* eslint-disable react/prop-types */
 import './Quiz.css'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { resultIntialState } from "../../constants";
+import { fetchAllQuestions } from './../Api/apiHandling';
 
-const Quiz = ({ questions }) => {
+
+const Quiz = () => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const { questionText, option1, option2, option3, option4, correctOption } = questions[currentQuestion];
-    let choices = {
-        option1,
-        option2,
-        option3,
-        option4
-    }
-    let correctAnswer = correctOption;
+    
     const [choice, setChoice] = useState(null);
     const [choiceIndex, setChoiceIndex] = useState(null);
     const [result, setResult] = useState(resultIntialState);
     const [showResult, setShowResult] = useState(false);
+
+
+    const [questions, setQuestions] = useState([]);
+    useEffect(() => {
+
+        fetchAllQuestions()
+            .then(questions => {
+                setQuestions(questions);
+                console.log(questions)
+            })
+            .catch(error => {
+                console.error('Error fetching questions:', error);
+            });
+
+    }, []);
+
+    const { questionText, option1, option2, option3, option4, correctOption } = questions[currentQuestion];
+    const choices = [option1, option2, option3, option4];
+    var correctAnswer = correctOption;
 
     const onClickAnswer = (choice, index) => {
         setChoiceIndex(index);
