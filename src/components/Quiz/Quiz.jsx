@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './../../styles/QuestionCard.css'
+import './Quiz.css'
 import { useState } from "react";
 import { resultIntialState } from "../../constants";
 
@@ -24,10 +24,11 @@ const Quiz = ({ questions }) => {
     }
 
     const onClickNext = () => {
+        setChoiceIndex(null);
+        setChoice(null);
+
         if (currentQuestion !== questions.length - 1) {
-            setChoiceIndex(null);
             setCurrentQuestion(prev => prev + 1);
-            setChoice(null);
         } else {
             setCurrentQuestion(0);
             setShowResult(true)
