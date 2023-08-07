@@ -1,19 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
-import { getUsers } from './apiHandling';
+import { fetchAllQuestions } from './apiHandling';
 
 const Api = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
 
-        getUsers()
+        fetchAllQuestions()
             .then(data => {
                 setData(data);
             })
             .catch(error => {
-                console.error('Error fetching todos:', error);
+                console.error('Error fetching questions:', error);
             });
+
     }, []);
 
     return (
@@ -22,7 +23,7 @@ const Api = () => {
             {data ? (
                 <ul>
                     {data.map(item => (
-                        <li key={item.id}>{item.name}</li>
+                        <li key={item.id}>{item.questionText}</li>
                     ))}
                 </ul>
 
