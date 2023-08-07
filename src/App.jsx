@@ -26,12 +26,7 @@ function App() {
       });
 
   }
-  // Accessing individual questions and options
-  const firstQuestion = questions.length > 0 ? questions[0] : null;
-  const questionText = firstQuestion ? firstQuestion.questionText : 'No questions available';
 
-  console.log(questionText)
-  //console.log(questions[0].questionText)
 
   return (
     <>
@@ -42,9 +37,6 @@ function App() {
           <Quiz questions={questions} /> 
       }
 
-
-
-      
     </>
   )
 }

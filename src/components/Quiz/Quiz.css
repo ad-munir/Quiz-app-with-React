@@ -171,3 +171,10 @@ body {
     border: solid 2px;
 }
 
+#correct-answers {
+    color: green;
+}
+
+#wrong-answers {
+    color: red;
+}

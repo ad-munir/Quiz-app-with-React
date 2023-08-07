@@ -100,8 +100,8 @@ const Quiz = ({ questions }) => {
                     <h1>Result</h1>
                     <h3>Total Questions: <span>{questions.length}</span></h3>
                     <h3>Score: <span>{result.score}</span></h3>
-                    <h3>Correct Answers: <span>{result.correctAnswers}</span></h3>
-                    <h3>Wrong Answers: <span>{result.wrongAnswers}</span></h3>
+                    <h3>Correct Answers: <span id='correct-answers'>{result.correctAnswers}</span></h3>
+                    <h3>Wrong Answers: <span id='wrong-answers'>{result.wrongAnswers}</span></h3>
 
                     <button onClick={() =>onclickTryAgain()}>Try again</button>
                 </div>}
