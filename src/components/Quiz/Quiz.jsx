@@ -6,7 +6,14 @@ import { resultIntialState } from "../../constants";
 const Quiz = ({ questions }) => {
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const { question, choices, correctAnswer } = questions[currentQuestion];
+    const { questionText, option1, option2, option3, option4, correctOption } = questions[currentQuestion];
+    let choices = {
+        option1,
+        option2,
+        option3,
+        option4
+    }
+    let correctAnswer = correctOption;
     const [choice, setChoice] = useState(null);
     const [choiceIndex, setChoiceIndex] = useState(null);
     const [result, setResult] = useState(resultIntialState);
@@ -63,7 +70,7 @@ const Quiz = ({ questions }) => {
                             <span id="question-number"> {currentQuestion + 1}</span>
                             <span id="question-sum">/{questions.length}</span>
                         </h1>
-                        <p className="question-text">{question} ?</p>
+                        <p className="question-text">{questionText}</p>
                     </div>
 
                     <ul className="card-right">
